@@ -12,31 +12,106 @@
   
   <div class="contactTracingForm">
     <form>
-      <div class="form-group form-group-lg" ng-if="currentStep === 1">
-        <input class="form-control" type="text" name="fullName" placeholder="Full Name *">
-        <small id="emailHelp" class="form-text text-muted error">This field is required.</small>
+      <!-- Step 1 -->
+      <div class="contactDetails" ng-if="currentStep === 1">
+        <div class="form-group form-group-lg" >
+          <label for="exampleInputEmail1">Full Name *</label>
+          <input class="form-control" ng-class="{'fieldError' : errors.step1.fullName}" type="text" name="fullName" ng-model="fields.step1.fullName"  placeholder="Full Name">
+          <small class="form-text text-muted error" ng-if="errors.step1.fullName">{{errors.step1.fullName}}</small>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1">Email *</label>
+          <input class="form-control" ng-class="{'fieldError' : errors.step1.email}" type="email" name="email" ng-model="fields.step1.email" placeholder="Email Address">
+          <small class="form-text text-muted error" ng-if="errors.step1.email">{{errors.step1.email}}</small>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1">Contact Number *</label>
+          <input class="form-control" ng-class="{'fieldError' : errors.step1.contactNumber}" type="text" name="contactNumber" ng-model="fields.step1.contactNumber"  placeholder="Contact Number *">
+          <small class="form-text text-muted error" ng-if="errors.step1.contactNumber">{{errors.step1.contactNumber}}</small>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1">Address *</label>
+          <input class="form-control" ng-class="{'fieldError' : errors.step1.address}" type="text" name="address"  ng-model="fields.step1.address" placeholder="Address">
+          <small class="form-text text-muted error" ng-if="errors.step1.address">{{errors.step1.address}}</small>
+        </div>
       </div>
 
-      <div class="form-group form-group-lg">
-        <input class="form-control" type="email" name="emailAddress" placeholder="Email Address *">
-        <small id="emailHelp" class="form-text text-muted error">This field is required.</small>
-      </div>
+      <!-- Step 2 -->
+      <div class="contactDetails"  ng-if="currentStep === 2">
+        <div class="form-group form-group-lg" >
+          <label for="exampleInputEmail1">Temperature in Celsius (°C) *</label>
+          <input class="form-control" ng-class="{'fieldError' : errors.step2.temperature}" type="text" name="temperature" ng-model="fields.step2.temperature"  placeholder="Temperature °C">
+          <small class="form-text text-muted error" ng-if="errors.step2.temperature">{{errors.step2.temperature}}</small>
+        </div>
 
-      <div class="form-group form-group-lg">
-        <input class="form-control" type="text" name="contactNumber" placeholder="Contact Number *">
-        <small id="emailHelp" class="form-text text-muted error">This field is required.</small>
-      </div>
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1" class="full-width">Feeling *</label>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="feeling" id="optionsRadios1" ng-model="fields.step2.feeling" value="well" checked>
+              Well
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="feeling" id="optionsRadios2" ng-model="fields.step2.feeling" value="nauseous">
+              Nauseous
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="feeling" id="optionsRadios3" ng-model="fields.step2.feeling" value="feverish">
+              Feverish
+            </label>
+          </div>
+          <small class="form-text text-muted error" ng-if="errors.step2.feeling">{{errors.step2.feeling}}</small>
+        </div>
 
-      <div class="form-group form-group-lg">
-        <input class="form-control" type="text" name="address" placeholder="Address *">
-        <small id="emailHelp" class="form-text text-muted error">This field is required.</small>
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1" class="full-width">Do you have cough? *</label>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="hasCough" id="optionsRadios1" ng-model="fields.step2.hasCough" value="yes">
+              Yes
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" name="hasCough" id="optionsRadios2" ng-model="fields.step2.hasCough" value="no" checked>
+              No
+            </label>
+          </div>
+          <small class="form-text text-muted error" ng-if="errors.step2.hasCough">{{errors.step2.hasCough}}</small>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <label for="exampleInputEmail1" class="full-width">Have you been in contact with any CoVid? *</label>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" ng-change="handleCovidContactChange()" name="hadCovidContact" id="optionsRadios1" ng-model="fields.step2.hadCovidContact" value="yes">
+              Yes
+            </label>
+          </div>
+          <div class="radio-inline">
+            <label>
+              <input type="radio" ng-change="handleCovidContactChange()" name="hadCovidContact" id="optionsRadios2" ng-model="fields.step2.hadCovidContact" value="no" checked>
+              No
+            </label>
+          </div>
+          <input class="form-control" ng-if="isAdditionalInfoShow" ng-class="{'fieldError' : fields.step2.hadCovidContact === 'yes' && errors.step2.additionalInfo}" type="text" name="additionalInfo" ng-model="fields.step2.additionalInfo"  placeholder="If yes, input the details of that person: * ">
+          <small class="form-text text-muted error" ng-if="fields.step2.hadCovidContact === 'yes' && errors.step2.additionalInfo">{{errors.step2.additionalInfo}}</small>
+        </div>
+
       </div>
     </form>
   </div>
 
   <div class='action-button'>
-    <button type="button" class="btn btn-lg btn-primary">Clear</button>
-    <button type="button" class="btn btn-lg btn-primary">Back</button>
+    <!-- <button type="button" class="btn btn-lg btn-primary">Clear</button> -->
+    <button type="button" class="btn btn-lg btn-primary" ng-click="handleBackClick()">Back</button>
     <button type="button" class="btn btn-lg btn-primary" ng-click="handleNextClick()">Next</button>
   </div>
 </div>
