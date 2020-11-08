@@ -24,7 +24,6 @@ body .navbar .navbar-nav > .active > a,
 body .navbar .navbar-nav > .active > a:hover,
 body .navbar .navbar-nav > .open > a {
   background-image: none!important;
-  background-color: #fff;
   color: #4167b4;
 }
 body .navbar .navbar-nav > li > a {
@@ -39,6 +38,6 @@ body .navbar .container-fluid > .navbar-header {
 }
 @media only screen and (max-width: 767px) {
   .navbar-default .navbar-nav li > a {
-    padding: 10px 15px;
+    padding: 10px 15px!important;
   }
 }

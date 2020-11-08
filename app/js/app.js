@@ -6,7 +6,7 @@ angular
     , ['ui.router'
     , 'myApp.home'
     , 'myApp.contactTracing'
-    , 'myApp.view1'
+    , 'myApp.about'
     , 'myApp.view2'
     , 'myApp.view3'
     , 'myApp.version'
