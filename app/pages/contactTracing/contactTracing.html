@@ -31,7 +31,7 @@
 
         <div class="form-group form-group-lg">
           <label for="exampleInputEmail1">Contact Number *</label>
-          <input class="form-control" ng-class="{'fieldError' : errors.step1.contactNumber}" type="text" name="contactNumber" ng-model="fields.step1.contactNumber"  placeholder="Contact Number *">
+          <input class="form-control" ng-class="{'fieldError' : errors.step1.contactNumber}" type="number" name="contactNumber" ng-model="fields.step1.contactNumber"  placeholder="Contact Number *">
           <small class="form-text text-muted error" ng-if="errors.step1.contactNumber">{{errors.step1.contactNumber}}</small>
         </div>
 
@@ -46,7 +46,7 @@
       <div class="contactDetails"  ng-if="currentStep === 2">
         <div class="form-group form-group-lg" >
           <label for="exampleInputEmail1">Temperature in Celsius (°C) *</label>
-          <input class="form-control" ng-class="{'fieldError' : errors.step2.temperature}" type="text" name="temperature" ng-model="fields.step2.temperature"  placeholder="Temperature °C">
+          <input class="form-control" ng-class="{'fieldError' : errors.step2.temperature}" type="number" name="temperature" ng-model="fields.step2.temperature"  placeholder="Temperature °C">
           <small class="form-text text-muted error" ng-if="errors.step2.temperature">{{errors.step2.temperature}}</small>
         </div>
 
