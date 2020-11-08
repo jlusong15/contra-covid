@@ -8,8 +8,8 @@ describe('myApp.contactTracing module', function () {
 
     it('should ....', inject(function ($controller) {
       //spec body
-      var view1Ctrl = $controller('ContactTracingCtrl');
-      expect(view1Ctrl).toBeDefined();
+      var viewCtrl = $controller('ContactTracingCtrl');
+      expect(viewCtrl).toBeDefined();
     }));
 
   });

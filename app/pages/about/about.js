@@ -5,7 +5,7 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('about', {
-        url: "/",
+        url: "/about",
         templateUrl: "pages/about/about.html",
         controller: 'aboutCtrl'
       })
