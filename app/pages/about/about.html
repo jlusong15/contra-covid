@@ -3,7 +3,7 @@
 
   <div class="row banner-wrapper  m-0 p-0">
     <div class="col-md-12 m-0 p-0 banner">
-      <h2>About Us</h2>
+      <h2>{{pageTitle}}</h2>
       
 
     </div>
@@ -11,12 +11,7 @@
   <div class="row m-0 p-0">
     <div class="row m-0 p-0">
       <div class="col-md-8 col-md-offset-2 page-content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc molestie arcu eu augue scelerisque, quis maximus nunc luctus. Donec tellus enim, rhoncus sed nibh sed, aliquet varius mauris. Ut vestibulum enim lorem. Mauris accumsan arcu lacus, ac laoreet lacus facilisis at. Aenean vulputate molestie erat nec rutrum. Duis iaculis posuere dui, vel egestas urna tempor in. Nullam porttitor enim vitae justo dapibus mattis.
-          
-        <p>Fusce fringilla lectus sem, id malesuada urna efficitur faucibus. Sed feugiat sit amet orci ac scelerisque. Duis et lorem lectus. Cras non leo posuere, blandit leo a, sodales lacus. Nunc rutrum tincidunt fermentum. In et mattis ante. Proin aliquet sapien quis facilisis luctus.</p>
-  
-        <p>Aliquam aliquet tempor justo ac eleifend. Sed ac luctus magna. Etiam euismod fermentum nunc, eu tempor ex posuere eu. Aenean mollis sem at pretium euismod. Praesent vitae quam feugiat, dignissim quam nec, ullamcorper purus. Mauris faucibus, sapien in aliquet ornare, orci ex sollicitudin magna, quis finibus erat nulla a lorem. Aenean scelerisque vel mauris vel scelerisque. Curabitur a varius ipsum, ut euismod quam. Proin eget iaculis enim.</p>
-  
+        <p ng-repeat = "pContent in sections.pageContent">{{pContent}}</p>
       </div>
     </div>
   </div>
@@ -27,37 +22,15 @@
         <div class="col-md-12 col-xs-12  section-title">
           <h3>RECENTS ARTICLES</span>
         </div>
-        <div class="col-md-4 col-xs-12 article-post">
+        <div class="col-md-4 col-xs-12 article-post" ng-repeat = "article in sections.articles">
           <span class="col-md-12 col-xs-12 article-feat-img">
-            <img src="images/articles/feat1.jpg">
+            <img src="{{article.img}}">
           </span>
           <span class="col-md-12 col-xs-12 article-title">
-            Lorem ipsum dolor sit amet
+            {{article.title}}
           </span>
           <span class="col-md-12 col-xs-12 article-content">
-            Nunc dictum euismod elit sit amet finibus. Nullam tortor orci, tincidunt nec pellentesque eget, varius id dolor. Vivamus ac mattis odio, vel aliquet enim. Curabitur justo quam, convallis eu purus in, venenatis sodales nisl. Morbi volutpat accumsan lectus, et ultrices metus luctus sed.
-          </span>
-        </div>
-        <div class="col-md-4 col-xs-12 article-post">
-          <span class="col-md-12 col-xs-12 article-feat-img">
-            <img src="images/articles/feat2.jpg">
-          </span>
-          <span class="col-md-12 col-xs-12 article-title">
-            Lorem ipsum dolor sit amet
-          </span>
-          <span class="col-md-12 col-xs-12 article-content">
-            Nunc dictum euismod elit sit amet finibus. Nullam tortor orci, tincidunt nec pellentesque eget, varius id dolor. Vivamus ac mattis odio, vel aliquet enim. Curabitur justo quam, convallis eu purus in, venenatis sodales nisl. Morbi volutpat accumsan lectus, et ultrices metus luctus sed.
-          </span>
-        </div>
-        <div class="col-md-4 col-xs-12 article-post">
-          <span class="col-md-12 col-xs-12 article-feat-img">
-            <img src="images/articles/feat3.jpg">
-          </span>
-          <span class="col-md-12 col-xs-12 article-title">
-            Lorem ipsum dolor sit amet
-          </span>
-          <span class="col-md-12 col-xs-12 article-content">
-            Nunc dictum euismod elit sit amet finibus. Nullam tortor orci, tincidunt nec pellentesque eget, varius id dolor. Vivamus ac mattis odio, vel aliquet enim. Curabitur justo quam, convallis eu purus in, venenatis sodales nisl. Morbi volutpat accumsan lectus, et ultrices metus luctus sed.
+            {{article.description}}
           </span>
         </div>
       </div>
@@ -68,12 +41,10 @@
     <div class="row m-0 p-0 team-section">
       <div class="col-md-8 col-md-offset-2">
         <div class="col-md-9 col-xs-12 team-content">
-          <p>Fusce fringilla lectus sem, id malesuada urna efficitur faucibus. Sed feugiat sit amet orci ac scelerisque. Duis et lorem lectus. Cras non leo posuere, blandit leo a, sodales lacus. Nunc rutrum tincidunt fermentum. In et mattis ante. Proin aliquet sapien quis facilisis luctus.</p>
-  
-          <p>Aliquam aliquet tempor justo ac eleifend. Sed ac luctus magna. Etiam euismod fermentum nunc, eu tempor ex posuere eu. Aenean mollis sem at pretium euismod. Praesent vitae quam feugiat, dignissim quam nec, ullamcorper purus. Mauris faucibus, sapien in aliquet ornare, orci ex sollicitudin magna, quis finibus erat nulla a lorem. Aenean scelerisque vel mauris vel scelerisque. Curabitur a varius ipsum, ut euismod quam. Proin eget iaculis enim.</p>
+          <p ng-repeat = "aboutUs in sections.teams.description">{{aboutUs}}</p>
         </div>
         <div class="col-md-3 col-xs-12 team-img">
-          <img src = "images/articles/team.jpg" width="200">
+          <img src = "{{sections.teams.photo}}" width="200">
         </div>
         
         <div class="clear-both"></div>
