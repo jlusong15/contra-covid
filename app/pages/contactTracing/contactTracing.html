@@ -104,14 +104,51 @@
           <input class="form-control" ng-if="isAdditionalInfoShow" ng-class="{'fieldError' : fields.step2.hadCovidContact === 'yes' && errors.step2.additionalInfo}" type="text" name="additionalInfo" ng-model="fields.step2.additionalInfo"  placeholder="If yes, input the details of that person: * ">
           <small class="form-text text-muted error" ng-if="fields.step2.hadCovidContact === 'yes' && errors.step2.additionalInfo">{{errors.step2.additionalInfo}}</small>
         </div>
+      </div>
 
+      <!-- Step 3 -->
+      <div class="contactDetails"  ng-if="currentStep === 3">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Contact Details</div>
+              
+                <!-- List group -->
+                <ul class="list-group">
+                  <li class="list-group-item">Name: {{fields.step1.fullName}}</li>
+                  <li class="list-group-item">Email: {{fields.step1.email}}</li>
+                  <li class="list-group-item">Contact Number: {{fields.step1.contactNumber}}</li>
+                  <li class="list-group-item">Address: {{fields.step1.address}}</li>
+                  <li class="list-group-item">Temperature: {{fields.step2.temperature}}</li>
+                  <li class="list-group-item">Temperature: {{fields.step2.temperature}}</li>
+                  <li class="list-group-item">Feeling: {{fields.step2.feeling}}</li>
+                  <li class="list-group-item">Do you have cough?: {{fields.step2.hasCough}}</li>
+                  <li class="list-group-item">Have you been in contact with any CoVid?: {{fields.step2.hadCovidContact}}</li>
+                  <li class="list-group-item">If yes, input the details of that person: {{fields.step2.additionalInfo}}</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="contactDetails"  ng-if="currentStep === 4">
+        <div class="container">
+          <div class="row">
+            <h2>Thank you for you cooperation.</h2>
+            <h4>Stay home and stay connected.</h4>
+          </div>
+        </div>
       </div>
     </form>
   </div>
 
   <div class='action-button'>
-    <!-- <button type="button" class="btn btn-lg btn-primary">Clear</button> -->
-    <button type="button" class="btn btn-lg btn-primary" ng-click="handleBackClick()">Back</button>
-    <button type="button" class="btn btn-lg btn-primary" ng-click="handleNextClick()">Next</button>
+    <button type="button" class="btn btn-lg" ng-click="handleReset()">Reset</button>
+    <button type="button" class="btn btn-lg btn-primary" ng-disabled="currentStep === 1" ng-click="handleBackClick()">Back</button>
+    <button type="button" class="btn btn-lg btn-primary" g-disabled="currentStep === 4" ng-click="handleNextClick()">Next</button>
   </div>
 </div>

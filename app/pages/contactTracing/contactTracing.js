@@ -91,8 +91,27 @@ angular
       $scope.currentStep = $scope.currentStep + 1
     }
 
-    $scope.handleBackClick = function (step) {
-      $scope.currentStep = $scope.currentStep-1
+    $scope.handleBackClick = function () {
+      $scope.currentStep = $scope.currentStep - 1
+    }
+
+    $scope.handleReset = function () {
+      $scope.currentStep = 1
+      $scope.fields = {
+        step1: {
+          fullName: null,
+          email: null,
+          contactNumber: null,
+          address: null,
+        },
+        step2: {
+          temperature: null,
+          feeling: 'well',
+          hasCough: 'no',
+          hadCovidContact: 'no',
+          additionalInfo: null
+        }
+      }
     }
 
   });
