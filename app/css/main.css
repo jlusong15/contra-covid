@@ -42,6 +42,9 @@ body .navbar .navbar-toggle {
 body .navbar .container-fluid > .navbar-header {
   min-height: 70px;
 }
+body .innerpage-container {
+  min-height: 625px;
+}
 body footer {
   background-color: #535353;
   text-align: center;
