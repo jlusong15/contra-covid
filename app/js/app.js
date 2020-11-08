@@ -15,5 +15,9 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /state1
     $urlRouterProvider.otherwise("/");
+  }).controller('myAppController', function($rootScope){
+    $rootScope.state = 'home';
+    $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+      $rootScope.state = toState.name;
+    });
   });
-
