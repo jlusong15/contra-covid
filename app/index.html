@@ -6,7 +6,7 @@
 <!--[if IE 8]>
 <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<html lang="en" ng-app="myApp" ng-controller="myAppController" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,20 +22,22 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
 
 </head>
-<body>
-<div ng-include="'./partials/header.html'"></div>
-<div class="container">
+<body class="body-{{state}}">
+<div class="page-wrapper">
+  <div ng-include="'./partials/header.html'"></div>
+  <div class="container">
 
 
-  <!--[if lt IE 7]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser.
-    Please <a href="http://browsehappy.com/">upgrade
-      your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser.
+      Please <a href="http://browsehappy.com/">upgrade
+        your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <div ui-view></div>
+    <div ui-view></div>
+  </div>
+  <div ng-include="'./partials/footer.html'"></div>
 </div>
-<div ng-include="'./partials/footer.html'"></div>
 <!-- inject:js -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-loader/angular-loader.js"></script>

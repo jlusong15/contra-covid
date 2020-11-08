@@ -11,7 +11,8 @@ angular
       })
     ;
   })
-  .controller('HomeCtrl', function () {
+  .controller('HomeCtrl', function ($scope) {
+    $scope.pageClass = "home";
     less.registerStylesheets();
     less.refresh(true);
 
