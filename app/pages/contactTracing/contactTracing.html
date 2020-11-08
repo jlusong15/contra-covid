@@ -116,7 +116,7 @@
             <div class="col-md-8 col-md-offset-2">
               <div class="panel panel-default">
                 <!-- Default panel contents -->
-                <div class="panel-heading">My Information</div>
+                <div class="panel-heading">Preview of my information</div>
                 <!-- List group -->
                 <ul class="list-group">
                   <li class="list-group-item"><strong>Full Name:</strong> {{fields.step1.fullName}}</li>
@@ -141,6 +141,7 @@
           <div class="row">
             <h2>Thank you for your cooperation.</h2>
             <h4>Stay home and stay connected.</h4>
+            <span class = "success-img"><img src="images/success.jpg"></span>
           </div>
         </div>
       </div>
@@ -167,7 +168,8 @@
 </div>
 
   <div class='action-button'>
-    <button type="button" class="btn btn-lg btn-primary" ng-disabled="currentStep === 1" ng-if="currentStep !== 4" ng-click="handleBackClick()">Back</button>
-    <button type="button" class="btn btn-lg btn-primary" ng-disabled="currentStep === 4" ng-if="currentStep !== 4" ng-click="handleNextClick()">{{currentStep === 3 ? 'Submit' : 'Next' }}</button>
+    <button type="button" class="btn btn-lg btn-primary" ng-disabled="currentStep === 1" ng-click="handleBackClick()" ng-if="currentStep < 4">Back</button>
+    <button type="button" class="btn btn-lg btn-primary" g-disabled="currentStep === 4" ng-click="handleNextClick()" ng-if="currentStep < 4">Next</button>
+    <button type="button" class="btn btn-lg btn-primary" g-disabled="currentStep === 4" ng-click="goBackHome()" ng-if="currentStep == 4">Home</button>
   </div>
 </div>

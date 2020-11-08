@@ -11,7 +11,7 @@ angular
       })
     ;
   })
-  .controller('ContactTracingCtrl', function ($scope) {
+  .controller('ContactTracingCtrl', function ($scope, $location) {
     less.registerStylesheets();
     less.refresh(true);
 
@@ -112,6 +112,10 @@ angular
           additionalInfo: null
         }
       }
+    }
+
+    $scope.goBackHome = function(){
+      $location.path('/')
     }
 
   });
