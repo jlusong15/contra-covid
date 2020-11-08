@@ -1,0 +1,83 @@
+/* Mixin */
+
+.jl-stepper {
+  margin-bottom: 40px;
+  .stepper {
+    border: 0;
+    background: none;
+    border-radius: 100%;
+    box-shadow: none;
+    padding: 11px;
+    height: 30px;
+    line-height: 11px;
+    font-size: 18px;
+    color: #b4b4b4;
+    padding: 0;
+    &:focus {
+      outline: 0;
+    }
+    &:active {
+      box-shadow: none;
+    }
+    &:focus:active {
+      outline: 0;
+    }
+    &:hover {
+      color: #5d5d5d;
+      .stepper-number {
+        background-color: #5d5d5d;
+      }
+    }
+    &.active {
+      box-shadow: none;
+      color: #1a75d0;
+      .stepper-number {
+        padding: 0;
+        background-color: #1a75d0;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        display: inline-grid;
+        align-items: center;
+        border-radius: 100%;
+      }
+    }
+  
+    .stepper-number {
+      padding: 0;
+      background-color:#b7b7b7;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      align-items: center;
+      border-radius: 100%;
+    }
+  }
+  
+  .stepper-line {
+    width: 100px;
+    display: inline-block;
+    border: 1px solid #b7b7b7;
+    margin: 0 11px;
+  }
+  
+}
+
+.error {
+  color: #cc3535;
+} 
+
+.action-button {
+  button {
+    background: #1b74cf;
+    border: 0;
+    &:hover {
+      background:#0052a7
+    }
+  }
+  .next-button {
+    background: #1b74cf;
+    border: 0;
+  }
+}

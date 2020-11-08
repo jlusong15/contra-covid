@@ -3,8 +3,9 @@
 // Declare app level module which depends on views, and components
 angular
   .module('myApp'
-  , ['ui.router'
-  , 'myApp.home'
+    , ['ui.router'
+    , 'myApp.home'
+    , 'myApp.contactTracing'
     , 'myApp.view1'
     , 'myApp.view2'
     , 'myApp.view3'
