@@ -66,7 +66,6 @@ gulp.task("inject", function () {
   var bowerFiles = gulp.src(asdf, {read: false});
 
   var appFilesGlobs = ['./app/js/**/*.js'
-    , './app/features/**/*.js'
     , './app/pages/**/*.js'
     , './app/css/*.css'
     , '!**/*_test.js'
@@ -91,9 +90,6 @@ gulp.task('assemble',
       , './app/pages/**/*.js'
       , '!./app/pages/**/*_test.js'
       , './app/pages/**/*.html'
-      , './app/features/**/*.js'
-      , '!./app/features/**/*_test.js'
-      , './app/features/**/*.html'
     ], {base: './app'})
       .pipe(gulp.dest('./dist'));
 
@@ -103,7 +99,7 @@ gulp.task('assemble',
 
 
 gulp.task('lint', function () {
-  gulp.src(['./app/js/**/*.js', './app/features/**/*.js'])
+  gulp.src(['./app/js/**/*.js'])
     .pipe(debug())
     .pipe(jshint())
     // You can look into pretty reporters as well, but that's another story
