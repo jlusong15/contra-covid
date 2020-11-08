@@ -1,5 +1,5 @@
 # ConTra COVID19
-A simple sign in form for Contact Tracing.
+A simple sign in form for Contact Tracing by Jennifer Lusong using AngularJS.
 
 ### Run the Application
 
