@@ -14,7 +14,7 @@ angular
   .controller('HomeCtrl', function ($scope, $location) {
     $scope.pageClass = "home";
     $scope.bannerHeader = "Be part of the SOLUTION";
-    $scope.bannerDetails = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit interdum quam, nec pellentesque neque rutrum at. Mauris a risus elit. Vivamus nisl felis, porta tempor lobortis non, molestie a mauris."
+    $scope.bannerDetails = "ConTra means Contact Tracing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a augue neque. Integer ullamcorper tempor tempor. Aenean blandit interdum quam, nec pellentesque neque rutrum at. Mauris a risus elit. Vivamus nisl felis."
     
     $scope.contactTracing = function () {
       $location.path('/contact-tracing')
